@@ -1,2 +1,1 @@
-export { default as GetTreeRepresentation } from './GetTreeRepresentation';
-export { default as HelloWorld } from './HelloWorld';
+export { default as GetTreeRepresentation } from './tree-representation/GetTreeRepresentation';

@@ -38,19 +38,13 @@
     "configuration": {
       "title": "Tree Extended",
       "properties": {
-        "treeExtended.default.maxLevel": {
-          "description": "The maximum deep level the generated directory tree will have",
-          "type": "integer",
-          "default": 2,
-          "order": 0
-        },
-        "treeExtended.default.showNotEmptyDirectoryIndicator": {
+        "treeExtended.showNotEmptyDirectoryIndicator": {
           "description": "When the directory tree is pruned at the maximum deep we can show an indicator ('...') which means the directory is not empty",
           "type": "boolean",
           "default": true,
-          "order": 1
+          "order": 0
         },
-        "treeExtended.default.charset": {
+        "treeExtended.charset": {
           "description": "Charset used to render the directory tree",
           "type": "string",
           "default": "utf8-icons",
@@ -60,12 +54,18 @@
             "Utf8 charset. Use other characters that are not defined in ascii which make it better to understand",
             "Utf8 with icons. Same characters than utf8, but also include fancy icons to easily differentiate between directories and files"
           ],
-          "order": 2
+          "order": 1
         },
-        "treeExtended.default.gitignore": {
+        "treeExtended.gitignore": {
           "description": "Ignore files and directories defined in the .gitignore file",
           "type": "boolean",
           "default": true,
+          "order": 2
+        },        
+        "treeExtended.default.maxLevel": {
+          "description": "The maximum deep level the generated directory tree will have",
+          "type": "integer",
+          "default": 2,
           "order": 3
         },
         "treeExtended.default.ignore": {
