@@ -1809,10 +1809,10 @@ to-regex-range@^5.0.1:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.3.9.tgz#717b8f220cc0bb7b44e40514c22b2e8bbc70d8b9"
   integrity sha1-cXuPIgzAu3tE5AUUwisui7xw2Lk=
 
-tree-extended@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/tree-extended/-/tree-extended-4.2.0.tgz#4e5bd8cb55102f0fe61c9ce11a9a11a3f8286c26"
-  integrity sha512-m2vMeeSsa8RQuKq8So00MRB/LQRhlB5b0yS6yxz9z1wlBSt88cUmJcrbyUAk+xgcbbczqkxWbsPR6sia1tb2Uw==
+tree-extended@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/tree-extended/-/tree-extended-4.4.0.tgz#d98a082f94c42b1bb20777a8d5684b7a11429edd"
+  integrity sha512-zQFahZzKH0tNl0V5a+3e9Rae8LW7Ve7+nv7CE2tbWrZl1d5Zd9IPyJVb7DXJlOCF0cW6CdnE5iOxrSiUDHYjWw==
   dependencies:
     gitignore-parser "0.0.2"
 
