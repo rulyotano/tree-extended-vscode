@@ -10,7 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
   const commands: ICommand[] = [new GetTreeRepresentation()];
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "tree-extended-vscode" is now active!');
+  console.log('Congratulations, your extension "tree-extended" is now active!');
 
   commands.forEach(command => {
     // The command has been defined in the package.json file

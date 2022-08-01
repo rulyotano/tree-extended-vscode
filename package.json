@@ -1,28 +1,29 @@
 {
-  "name": "tree-extended-vscode",
-  "displayName": "tree-extended-vscode",
+  "name": "tree-extended",
+  "displayName": "tree-extended",
   "description": "Extension for getting the text tree for a directory with a lot of options",
   "version": "0.0.1",
+	"icon": "images/tree-extended.png",
   "engines": {
     "vscode": "^1.65.0"
   },
   "license": "MIT",
   "categories": [
-    "Other"
+    "Other",
+    "Education",
+    "Visualization",
+    "Formatters"
   ],
   "activationEvents": [
-    "onCommand:tree-extended-vscode.helloWorld",
-    "onCommand:tree-extended-vscode.getTreeRepresentation"
+    "onCommand:tree-extended.helloWorld",
+    "onCommand:tree-extended.getTreeRepresentation"
   ],
+  "publisher": "rulyotano",
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "tree-extended-vscode.helloWorld",
-        "title": "Hello World"
-      },
-      {
-        "command": "tree-extended-vscode.getTreeRepresentation",
+        "command": "tree-extended.getTreeRepresentation",
         "title": "Get tree representation"
       }
     ],
@@ -30,7 +31,7 @@
       "explorer/context": [
         {
           "when": "explorerResourceIsFolder",
-          "command": "tree-extended-vscode.getTreeRepresentation",
+          "command": "tree-extended.getTreeRepresentation",
           "alt": "markdown.showPreviewToSide",
           "group": "navigation"
         }
@@ -49,7 +50,11 @@
           "description": "Charset used to render the directory tree",
           "type": "string",
           "default": "utf8-icons",
-          "enum": ["ascii", "utf8", "utf8-icons"],
+          "enum": [
+            "ascii",
+            "utf8",
+            "utf8-icons"
+          ],
           "enumDescriptions": [
             "Ascii classic charset. Compatible with old system and consoles",
             "Utf8 charset. Use other characters that are not defined in ascii which make it better to understand",
@@ -62,7 +67,7 @@
           "type": "boolean",
           "default": true,
           "order": 2
-        },        
+        },
         "treeExtended.default.maxLevel": {
           "description": "The maximum deep level the generated directory tree will have",
           "type": "integer",
@@ -87,13 +92,13 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "yarn run package",
+    "vscode:prepublish": "npm run package",
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
@@ -114,6 +119,6 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "tree-extended": "^4.4.0"
+    "tree-extended": "^4.5.0"
   }
 }

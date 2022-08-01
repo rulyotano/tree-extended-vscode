@@ -1,6 +1,6 @@
-# tree-extended-vscode README
+# tree-extended README
 
-This is the README for your extension "tree-extended-vscode". After writing up a brief description, we recommend including the following sections.
+This extension allows creating custom directory tries, by passing specific arguments.
 
 ## Features
 

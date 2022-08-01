@@ -6,7 +6,7 @@ import TreeConfigurationProvider from './configuration/TreeConfigurationProvider
 import { getTreeFileNameFromUri } from '../../helpers';
 
 export default class GetTreeRepresentation implements ICommand {
-  name = 'tree-extended-vscode.getTreeRepresentation';
+  name = 'tree-extended.getTreeRepresentation';
   alreadyGeneratingTree = false;
   action: (...args: any[]) => any = async (uri: vscode.Uri) => {
     if (this.alreadyGeneratingTree) {

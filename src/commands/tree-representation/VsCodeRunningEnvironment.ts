@@ -1,5 +1,5 @@
 import type { IRunningEnvironment } from 'tree-extended';
-import { join } from 'path';
+import { join, sep } from 'path';
 import { existsSync, readdir, lstat, readFile, exists } from 'fs';
 import { EOL } from 'os';
 import * as util from 'util';
@@ -32,5 +32,8 @@ export default class NodeRunningEnvironment implements IRunningEnvironment {
   }
   getEndOfLine(): string {
     return EOL;
+  }
+  getPathParts(path: string): string[] {
+    return path.split(sep);
   }
 }
