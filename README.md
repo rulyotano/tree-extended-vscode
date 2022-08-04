@@ -1,70 +1,100 @@
-# tree-extended README
+# tree-extended
 
-This extension allows creating custom directory tries, by passing specific arguments.
+This VSCode extension allows creating custom directory tries, by passing specific arguments.
 
-## Features
+For using it, just right click on any directory within you working space, and pick the `Get tree representation` menu item.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Then you can choose between 2 option:
+1. Quick one (will use default configurations from the plugin settings)
+2. Custom one (you can customize tree max deep and filters want to use)
 
-For example if there is an image subfolder under your extension project workspace:
+## How to use it
 
-\!\[feature X\]\(images/feature-x.png\)
+To just using the extension quickly, click on any folder in the working directory, pick the `Get tree representation` menu item, and then click `No` when ask you if want to use custom configuration:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![Quick usage](images/tree-extended-quick.gif)
+
+But also you can customize the following things:
+- Tree's maximum deep
+- Filter to IGNORE directories and file matching pattern
+- Filter to ONLY choose directories and files matching pattern
+- Charset to use. We can choose between `ascii`, `utf-8` and `utf-8` with icons (default). This is a plugin configuration.
+- If want to ignore items by using the `.gitignore` file. This is a plugin configuration.
+- If we want to show some indicator if directory is empty or not when we get at the maximum tree level. We can show `...` or nothing. This is a plugin configuration. 
+
+## Tree's deep
+
+The first custom configuration that we can use is a number meaning the maximum deep of the tree we want  get. By default it will take the value from the plugins settings (`Default Max Level`).
+
+## Ignore filter
+
+The second custom configuration that we can use is a text filter to indicate the items we want to ignore from the directory tree.
+
+We can set global filters or filter by level. For example, in this filter `aa, bb, 0:ddd, 2:file`, we want to say: exclude items matching `aa` and `bb`, also exclude all matching `ddd` at level `0`, and all matching `file` at level `2`.
+
+In the following image we ignore all items matching the pattern `d`:
+
+![Ignore filter](images/tree-extended-ignore-filter.gif)
+
+And here we apply the ignore filter by specifying `ccc, 2:d`, meaning "exclude all items matching `ccc` and all items matching `d` in the second level of the tree":
+
+![Ignore filter by levels](images/tree-extended-ignore-filter-by-levels.gif)
+
+## Only filter
+
+The third custom configuration is a text filter to indicate that we ONLY want to get items matching this filter.
+
+We can define this in the same way than we do with the `Ignore Filter`. In this way, `aa, bb, 0:ddd, 2:file` means: we want ONLY items matching `aa` and `bb`, but also in level 0 can include items matching `ddd` and in level 2 can include items matching `file`.
+
+In this example we only want items matching `b, d, c` patterns:
+
+![Only filter](images/tree-extended-only-filter.gif)
+
+In this example we got the complete route to a file:
+
+![Only filter complete route to file](images/tree-extended-only-filter-complete-route-to-file.gif)
+
+## Show not-empty directory indicator
+
+By default we show three dots (`...`) when we got the maximum directory deep in the tree and the directory is not empty. We can change this to show nothing:
+
+![Not empty directory indicator configuration](images/tree-extended-configurations.gif)
+
+## Charset
+
+We can change the charset to use to generate the tree in the plugin configuration:
+
+![Charset configuration](images/tree-extended-configurations-charset.gif)
+
+## Ignoring .gitignore
+
+We can decide if ignore items (or not) in the `.gitignore` file by changing the plugin configurations:
+
+![Gitignore configuration](images/tree-extended-configurations-gitignore.gif)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+This extensions is implemented by using the library [tree-extended](https://github.com/rulyotano/tree-extended). You can check it to find a more detailed documentation, and also, you can use it directly from your terminal by installing it globally as a npm package.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `treeExtended.showNotEmptyDirectoryIndicator`: When the directory tree is pruned at the maximum deep we can show an indicator ('...') which means the directory is not empty
+* `treeExtended.charset`: Charset used to render the directory tree.
+* `treeExtended.gitignore`: Ignore files and directories defined in the .gitignore file.
+* `treeExtended.default.maxLevel`: The default maximum deep level the generated directory tree will have.
+* `treeExtended.default.ignore`: Filter to exclude folders or files in an optional tree level, e.g.: 'window, 0:red cat, 1:blue sky'.
+* `treeExtended.default.only`: Filter to only include folders or files in an optional tree level, e.g.: 'window, 0:red cat, 1:blue sky'.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* Found issue with the ONLY filter: currently the global filters have priority over the filters defined by level, this means if we define global only filters, filters by level are going to be ignored. This need to be fixed in the library.
+* Needs i18n translation to other languages.
+* Pending to implement test.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+First Release! A working extensions that can be used to generate customized directory text tries. Has a known issue with the ONLY filters which give priority to global filters over level filters.
