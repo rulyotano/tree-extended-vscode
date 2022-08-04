@@ -2,8 +2,12 @@
   "name": "tree-extended",
   "displayName": "tree-extended",
   "description": "Extension for getting the text tree for a directory with a lot of options",
-  "version": "0.0.1",
-	"icon": "images/tree-extended.png",
+  "version": "1.0.1",
+  "icon": "images/tree-extended.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rulyotano/tree-extended-vscode.git"
+  },
   "engines": {
     "vscode": "^1.65.0"
   },
@@ -76,14 +80,14 @@
         },
         "treeExtended.default.ignore": {
           "description": "Filter to exclude folders or files in an optional tree level, e.g.: 'window, 0:red cat, 1:blue sky'",
-          "markdownDescription": "Filter to exclude folders or files in an optional tree level. Pattern: `[level1:]folder/file name1,  [level2:]folder/file name2, ...`, e.g.: `window, 0:red cat, 1:blue sky`. See more details and examples at (tree-extended)[https://www.npmjs.com/package/tree-extended]",
+          "markdownDescription": "Filter to exclude folders or files in an optional tree level. Pattern: `[level1:]folder/file name1,  [level2:]folder/file name2, ...`, e.g.: `window, 0:red cat, 1:blue sky`. See more details and examples at [tree-extended](https://www.npmjs.com/package/tree-extended)",
           "type": "string",
           "default": "",
           "order": 4
         },
         "treeExtended.default.only": {
           "description": "Filter to only include folders or files in an optional tree level, e.g.: 'window, 0:red cat, 1:blue sky'",
-          "markdownDescription": "Filter to only include folders or files in an optional tree level. Pattern: `[level1:]folder/file name1,  [level2:]folder/file name2, ...`, e.g.: `window, 0:red cat, 1:blue sky`. See more details and examples at (tree-extended)[https://www.npmjs.com/package/tree-extended]",
+          "markdownDescription": "Filter to only include folders or files in an optional tree level. Pattern: `[level1:]folder/file name1,  [level2:]folder/file name2, ...`, e.g.: `window, 0:red cat, 1:blue sky`. See more details and examples at [tree-extended](https://www.npmjs.com/package/tree-extended)",
           "type": "string",
           "default": "",
           "order": 5
@@ -92,7 +96,7 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run package",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
@@ -100,7 +104,11 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js", 
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
@@ -110,6 +118,7 @@
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "@vscode/test-electron": "^2.1.2",
+    "esbuild": "^0.14.53",
     "eslint": "^8.9.0",
     "glob": "^7.2.0",
     "mocha": "^9.2.1",

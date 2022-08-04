@@ -8,6 +8,8 @@ Then you can choose between 2 option:
 1. Quick one (will use default configurations from the plugin settings)
 2. Custom one (you can customize tree max deep and filters want to use)
 
+> This extension generates `.tree` files, so these can be used with the [tree extension](https://marketplace.visualstudio.com/items?itemName=CTC.vscode-tree-extension)
+
 ## How to use it
 
 To just using the extension quickly, click on any folder in the working directory, pick the `Get tree representation` menu item, and then click `No` when ask you if want to use custom configuration:
@@ -80,7 +82,7 @@ This extensions is implemented by using the library [tree-extended](https://gith
 
 This extension contributes the following settings:
 
-* `treeExtended.showNotEmptyDirectoryIndicator`: When the directory tree is pruned at the maximum deep we can show an indicator ('...') which means the directory is not empty
+* `treeExtended.showNotEmptyDirectoryIndicator`: When the directory tree is pruned at the maximum deep we can show an indicator (`...`) which means the directory is not empty
 * `treeExtended.charset`: Charset used to render the directory tree.
 * `treeExtended.gitignore`: Ignore files and directories defined in the .gitignore file.
 * `treeExtended.default.maxLevel`: The default maximum deep level the generated directory tree will have.
