@@ -1,6 +1,6 @@
 import type { IRunningEnvironment } from 'tree-extended';
 import { join, sep } from 'path';
-import { existsSync, readdir, lstat, readFile, exists } from 'fs';
+import { existsSync, readdir, lstat, readFile } from 'fs';
 import { EOL } from 'os';
 import * as util from 'util';
 

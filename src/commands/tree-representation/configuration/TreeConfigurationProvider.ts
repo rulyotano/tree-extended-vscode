@@ -1,5 +1,5 @@
 import { Configuration } from 'tree-extended';
-import { extensionName, configuration } from '../../../consts';
+import { extensionName, configuration } from '../../../constants';
 import * as vscode from 'vscode';
 import TreeConfigurationFromUser from './TreeConfigurationFromUser';
 
