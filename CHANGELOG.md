@@ -21,3 +21,9 @@
 ## [1.0.2] - 2022-08-08
 ### Changed
 - Added CI (just empty to test)
+
+## [1.0.3] - 2022-08-09
+### Changed
+- Changed Logo
+### Added
+- License

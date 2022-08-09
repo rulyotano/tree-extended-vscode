@@ -2,8 +2,8 @@
   "name": "tree-extended",
   "displayName": "tree-extended",
   "description": "Extension for getting the text tree for a directory with a lot of options",
-  "version": "1.0.2",
-  "icon": "images/tree-extended.png",
+  "version": "1.0.3",
+  "icon": "images/tree-extended-logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/rulyotano/tree-extended-vscode.git"
