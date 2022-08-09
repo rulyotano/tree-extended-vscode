@@ -1,5 +1,8 @@
 # tree-extended
 
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/rulyotano.tree-extended?logo=visual-studio-code&logoColor=blue) [![Publish](https://github.com/rulyotano/tree-extended-vscode/actions/workflows/publish.yml/badge.svg)](https://github.com/rulyotano/tree-extended-vscode/actions/workflows/publish.yml)
+
+
 This VSCode extension allows creating custom directory tries, by passing specific arguments.
 
 For using it, just right click on any directory within you working space, and pick the `Get tree representation` menu item.
