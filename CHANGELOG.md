@@ -27,3 +27,7 @@
 - Changed Logo
 ### Added
 - License
+
+## [1.0.4] - 2022-08-24
+### Changed
+- Updated tree-extended library in order to fix know issue: "currently the global filters have priority over the filters defined by level"

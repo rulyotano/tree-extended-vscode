@@ -94,7 +94,6 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-* Found issue with the ONLY filter: currently the global filters have priority over the filters defined by level, this means if we define global only filters, filters by level are going to be ignored. This need to be fixed in the library.
 * Needs i18n translation to other languages.
 * Pending to implement test.
 

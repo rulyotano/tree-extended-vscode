@@ -2,7 +2,7 @@
   "name": "tree-extended",
   "displayName": "tree-extended",
   "description": "Extension for getting the text tree for a directory with a lot of options",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "icon": "images/tree-extended-logo.png",
   "repository": {
     "type": "git",
@@ -130,6 +130,6 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "tree-extended": "^4.5.0"
+    "tree-extended": "^4.6.0"
   }
 }
