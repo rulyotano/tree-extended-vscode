@@ -1,6 +1,6 @@
-# tree-extended
+# tree-extended-vscode
 
-![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/rulyotano.tree-extended?logo=visual-studio-code&logoColor=blue) [![Publish](https://github.com/rulyotano/tree-extended-vscode/actions/workflows/publish.yml/badge.svg)](https://github.com/rulyotano/tree-extended-vscode/actions/workflows/publish.yml)
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/rulyotano.tree-extended?logo=visual-studio-code&logoColor=blue)](https://marketplace.visualstudio.com/items?itemName=rulyotano.tree-extended) [![Publish](https://github.com/rulyotano/tree-extended-vscode/actions/workflows/publish.yml/badge.svg)](https://github.com/rulyotano/tree-extended-vscode/actions/workflows/publish.yml)
 
 
 This VSCode extension allows creating custom directory tries, by passing specific arguments.
