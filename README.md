@@ -27,7 +27,7 @@ But also you can customize the following things:
 - If want to ignore items by using the `.gitignore` file. This is a plugin configuration.
 - If we want to show some indicator if directory is empty or not when we get at the maximum tree level. We can show `...` or nothing. This is a plugin configuration. 
 
-## Tree's deep
+## Tree's depth
 
 The first custom configuration that we can use is a number meaning the maximum deep of the tree we want  get. By default it will take the value from the plugins settings (`Default Max Level`).
 
